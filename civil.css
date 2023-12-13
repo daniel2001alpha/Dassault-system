@@ -1,0 +1,1614 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+/*------------------------------- navigationBar---------------------- */
+nav{
+    display:flex;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 111;
+    background-color: white;
+    width:100%;
+    padding:0px 30px;
+    justify-content: space-between;
+}
+/* companyLogo */
+nav>img[alt="Dassault System"]{
+    height:70px;
+    margin: 10px 0px;
+    object-fit:cover;
+}
+/* submenu */
+nav>.submenu{
+    display: flex;
+    gap:30px;
+    align-items: center;
+}
+nav>.submenu .menu>a{
+    font-size: 25px;
+    text-transform:capitalize;
+    text-decoration:none;
+    color:black;
+}
+nav>.submenu>div{
+    height:90px;
+    padding-top:35px ;
+}
+nav>.submenu>div{
+    border-bottom: 3px solid transparent;
+}
+    /* barIcon */
+nav>label .fa-bars{
+    display: none;
+}
+/* ------------------------------------------submenu dropdown----------------------------------- */
+nav .submenu>.menu:first-child:hover{
+    border-bottom:3px solid #164863;
+} 
+nav .submenu>.menu:nth-child(2):hover{
+    border-bottom:3px solid #4F6F52;
+} 
+nav .submenu>.menu:nth-child(3){
+    border-bottom:3px solid #116530;
+} 
+nav .submenu>.menu:nth-child(4):hover{
+    border-bottom:3px solid #CD5C08;
+} 
+nav .submenu>.menu:last-child:hover{
+    border-bottom:3px solid #D80032;
+} 
+nav .submenu>.menu:nth-child(2){
+    border-bottom:3px solid white;
+    transition: all 1s;
+}
+nav .submenu>.menu:nth-child(1){
+    border-bottom:3px solid white;
+    transition: all 1s;
+}
+nav .submenu>.menu:nth-child(4){
+    border-bottom:3px solid white;
+    transition: all 1s;
+}
+nav .submenu>.menu:nth-child(5){
+    border-bottom:3px solid white;
+    transition: all 1s;
+}
+
+nav .submenu .menu .dropdown{
+    position:absolute;
+    top:92px;
+    left:50px;
+    width:calc(100% - 100px);
+    padding:40px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    column-gap: 20px;
+    visibility: hidden;
+    transition: all 0.1s;
+    background-color: white;
+    z-index:10;
+}
+nav .submenu .menu:hover .dropdown{
+    visibility:visible;
+}
+/* dropdown headings h3*/
+nav .submenu .menu .dropdown div h3{
+    text-transform: capitalize;
+    padding-bottom:20px;
+    line-height: 25px;
+    text-decoration:none;
+}
+nav .submenu .menu .dropdown div h3>a{
+    text-decoration: none;
+}
+nav .submenu .menu .dropdown div h3>a:hover{
+   text-decoration: underline 2px;
+}
+/* webtv that convert into inline */
+nav .submenu .menu .dropdown>div div h3{
+    display: inline-block;
+}
+/* anchor that convert into block */
+nav .submenu .menu .dropdown div a{
+    display:block;
+    color: black;
+}
+/* anchor that convert into block */
+nav .submenu .menu .dropdown div .anchor{
+    display:inline-block;
+}
+nav .submenu .menu .dropdown div .pad-top{
+    padding-top:20px;
+}
+nav .submenu .menu .dropdown div>a{
+    padding-bottom:7px;
+    line-height: 20px;
+    text-decoration: none;
+}
+nav .submenu .menu .dropdown div>a:hover{
+    text-decoration: underline;
+}
+/* navIcons */
+nav>.navicons{
+    font-size: 25px;
+    display: flex;
+    gap:40px;
+    align-items: center;
+    border-bottom: 3px solid transparent;
+}
+nav>.navicons i{
+    height: 90px;
+    padding-top: 35px;
+    border-bottom: 3px solid transparent;
+    transition: all 1s;
+}
+nav>.navicons .icon>i:hover{
+    border-bottom: 3px solid #116530;
+}
+/* -----------camera,wrench,magnifier dropdown ------------*/
+nav>.navicons .icon>.dropdown{
+    position:absolute;
+    top:92px;
+    left:67%;
+    padding:20px;
+    display: none;
+    z-index:10;
+    background-color: white;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+nav>.navicons .icon>.dropdown>div{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:10px;
+    height:50px;
+}
+nav>.navicons .icon>.dropdown>div span{
+    text-transform:capitalize;
+    font-size:18px;
+    text-decoration: underline transparent;
+}
+nav>.navicons .icon>.dropdown>div span:hover{
+    text-decoration: underline;
+}
+nav>.navicons .icon:hover .dropdown{
+    display:block;
+}
+/* wrench */
+nav>.navicons .wrench>.dropdown{
+    left:65%;
+    width:400px;
+    padding:20px 30px;
+}
+/* magnifier */
+nav>.navicons .magnifier>.dropdown{
+    position: absolute;
+    top:92px;
+    left:10%;
+    width:calc(100% - 20%);
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    display:flex;
+    align-items: center;
+    background-color: white;
+    z-index:10;
+    padding:10px 0px;
+    justify-content: space-evenly;
+    align-items: center;
+    display: none;
+}
+nav>.navicons .magnifier #mag:checked~.dropdown{
+    display:flex;
+}
+nav>.navicons .magnifier .dropdown input{
+    display: block;
+    width:calc(100% - 30%);
+    height:50px;
+    outline:none;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+/* label_input */
+nav>label,nav input{
+    display:none;
+}
+/* barIcon */
+nav>label i{
+    font-size:30px;
+    background-color: coral;
+}
+/* selectLanguage */
+select{
+    font-size: 20px;
+    outline: none;
+    border: none;
+    transition: all 1s;
+    border-bottom: 3px solid transparent;
+}
+select:hover{
+    border-bottom: 3px solid #116530;
+}
+/* mediaQurey */
+@media only screen and (min-width:200px) and (max-width:1275px){
+    nav>.submenu{
+        position:absolute;
+        top:50px;
+        right:-100%;
+        justify-content: center;
+        flex-direction: column;
+        gap:10px;
+        width:calc(100% - 30%);
+        width:470px;
+        align-items: center;
+        padding: 20px 0;
+        background-color:white;
+        transition: all 0.5s;
+        z-index:10;
+    }
+    nav>#lbl:checked~.submenu{
+        display: flex;
+        right:0;
+    }
+    nav>.submenu .menu>a{
+       height: fit-content;
+    }
+    nav>.navicons .fa-camera,nav>.navicons .fa-wrench{
+        display: none;
+    }
+    nav>.navicons label>.fa-magnifying-glass{
+        position: absolute;
+        top:0;
+        padding-top:15px ;
+        right:65px;
+    }
+    nav>.navicons i{
+        height: 0px;
+        padding-top: 20px;
+    }
+    select{
+        display: none;
+    }
+    nav{
+        height:50px;
+        padding-left:10px;
+    }
+    /* label */
+    nav>label{
+        display:block;
+    }
+    /* barIcon */
+    nav>label .fa-bars{
+        display: grid;
+        position: absolute;
+        right:0;
+        top:0;
+        color:white;
+        padding:10px;
+    }
+    /* companyLogo */
+    nav>img[alt="Dassault System"]{
+        height:40px;
+        margin:5px 0px;
+    }
+    /* showing nav dropdown when hover */
+    nav .submenu .menu .dropdown>div>a,nav .submenu .menu .dropdown>div .anchor,nav .submenu .menu .dropdown>div .fa-arrow-up-right-from-square {
+        display: none;
+    }
+    nav .submenu .menu .dropdown>div>h3:hover~a,nav .submenu .menu .dropdown>div>h3:hover~div .anchor,nav .submenu .menu .dropdown>div .fa-arrow-up-right-from-square:hover .fa-arrow-up-right-from-square {
+        display: grid;
+    }
+    /* dropdown headings h3*/
+    nav .submenu .menu .dropdown div h3{
+       padding-bottom:10px;
+    }
+    /* magnifier */
+    nav>.navicons .magnifier .dropdown i{
+        height:10px;
+        padding:0;
+        padding-bottom: 20px;
+    }
+    nav>.navicons .magnifier>.dropdown{
+        top:50px;
+    }
+    /* magnifier */
+    nav>.navicons .magnifier>.dropdown{
+        left:0%;
+        width:calc(100% - 0%);
+        padding:10px 0px;
+    }
+    
+}
+@media only screen and (min-width:200px) and (max-width:475px){
+    nav>.submenu{
+        width:100%;
+        padding:30px;
+    }
+    nav>.submenu>div{
+        height:fit-content;
+        padding-top:0px;
+    }
+    nav .submenu .menu .dropdown{
+        padding:20px;
+        top:calc(100% - 0%);
+        left:0;
+        width:100%;
+    }
+    /* magnifier dropdown search letter */
+    nav>.navicons .magnifier .dropdown label{
+       display: none;
+    }
+    nav>.navicons .magnifier .dropdown input{
+        border:1px solid  #427D9D ;
+    }
+    nav>.navicons label>.fa-magnifying-glass{
+        padding-top:15px;
+        right:60px;
+    }
+
+}
+/* anchor */
+nav .submenu .menu .group div h3>a{
+    color:#164863;
+}
+nav .submenu .menu .defense div h3>a{
+    color:#4F6F52;
+}
+nav .submenu .menu .civil div h3>a{
+    color:#116530;
+}
+nav .submenu .menu .space div h3>a{
+    color:#CD5C08;
+}
+nav .submenu .menu .passion div h3>a{
+    color:#D80032;
+}
+
+/*------------------------------------------------------- body-content------------------------------------- */
+/* --------------------------------------------civil_introduction------------- */
+section>.about-intro{
+    margin-top:93px;
+    margin-bottom:50px;
+    overflow: hidden;
+    position: relative;
+}
+section>.about-intro>div:first-child{
+    width:100%;
+    height:550px;
+}
+section>.about-intro img{
+    width:100%;
+    height: 100%;
+}
+/* copy_right */
+section>.about-intro>a{
+    background-color: rgba(0, 0, 0,0.4);
+    padding:7px 12px;
+    color:white;
+    text-decoration: none;
+    display: block;
+    position: absolute;
+    width: 95%;
+    top:94.5%;
+    transition: all 0.5s;
+}
+section>.about-intro>a:hover{
+    text-decoration: underline 2px;
+    background-color: rgba(0, 0, 0,0.9);
+}
+/* chevronIcon */
+section>.about-intro .chevron{
+    display: flex;
+    gap:10px;
+    margin-top:82px;
+}
+section>.about-intro .chevron>div{
+    background-color:#116530;
+    width:fit-content;
+    transform: skew(-15deg);
+}
+section>.about-intro .chevron>div:hover{
+    background-color:#0B4619;
+}
+section>.about-intro .chevron i{
+    color:white;
+    font-size: 18px;
+    padding:20px 25px;
+    transform: skew(5deg);
+}
+/* letter civil */
+section>.about-intro>.civil-text{
+    display: flex;
+    align-items: center;
+    gap:25px;
+    justify-content: flex-end;
+    position:absolute;
+    right:0;
+    top:74.5%
+}
+section>.about-intro .txt{
+    border-left: 15px solid silver;
+    transform: skewX(-15deg);
+    margin-right:25px;
+}
+section>.about-intro .txt:hover{
+    border-left: 15px solid #116530;
+}
+section>.about-intro .txt:hover .letter{
+    background-color: #0B4619;
+    color:white;
+}
+section>.about-intro .txt .letter{
+    background-color:white;
+    width:500px;
+    transition: all 0.7s;
+    border-bottom: 2px solid silver;
+}
+section>.about-intro .txt .letter h1{
+    font-size:50px;
+    padding:15px;
+    padding-top:25px;
+    padding-left: 30px;
+    transform: skewX(15deg);
+}
+/* anchor */
+section>.about-intro .txt .link{
+    background-color: white;
+    width:500px;
+    padding:15.5px;
+    padding-left:30px;
+    display: flex;
+    gap:10px;
+}
+section>.about-intro .txt .link a{
+    color:black;
+    display: inline-block;
+    text-decoration: none;
+}
+section>.about-intro .txt:hover a{
+    text-decoration:underline 2px;
+}
+section>.about-intro .txt .link i{
+    transition: all 0.5s 0.5s;
+    transform: skewX(10deg);
+}
+section>.about-intro .txt:hover i{
+    color:#116530;
+    transform:translateX(30px);
+}
+@media only screen and (min-width:300px) and (max-width:1300px){
+    /* image */
+    section>.about-intro>div:first-child{
+        height:500px;
+    }
+    /* letter civil */
+section>.about-intro{
+    margin-top: 50px;
+    padding-bottom: 140px;
+    background-color: #116530;
+}
+section>.about-intro>.civil-text{
+    top:77.9%;
+}
+section>.about-intro .txt{
+    width:100vw;
+    border-left: 15px solid white;
+}
+section>.about-intro .txt .letter{
+    width:100%;
+}
+section>.about-intro .txt .letter h1{
+    padding-left:30px;
+}
+/* anchor */
+section>.about-intro .txt .link{
+    width:100%;
+}
+section>.about-intro .txt .link a{
+    padding-left:30px;
+}
+/* copy_right */
+section>.about-intro>a{
+    top:73.4%;
+}
+/* chevronIcon */
+section>.about-intro .chevron{
+    position: absolute;
+    bottom:99%;
+    gap:0;
+}
+section>.about-intro .chevron>div{
+    transform:none;
+}
+section>.about-intro .chevron i{
+    transform:none;
+}
+}
+@media only screen and (min-width:300px) and (max-width:800px){
+    /* letter civil */
+    section>.about-intro{
+        padding-bottom: 101px;
+        background-color:#4F6F52;
+    }
+    section>.about-intro>.civil-text{
+        top:79.9%;
+    }
+    /* image */
+    section>.about-intro>div:first-child{
+        height:400px;
+    }
+    /* chevron */
+section>.about-intro .chevron i{
+    padding:15px 20px;
+}
+/* copy_right */
+section>.about-intro>a{
+    top:73.8%;
+}
+/* letter-civil */
+section>.about-intro .txt .letter h1{
+    font-size:35px;
+    padding:10px;
+    padding-top:20px;
+    padding-left:15px;
+}
+/* anchor */
+section>.about-intro .txt .link{
+    padding: 10px 10px 10px 5px;
+    background-color: #116530;
+    color: white;
+}
+section>.about-intro .txt .link a{
+    font-size: 13px;
+    color:white;
+}
+}
+/* <!-------------------------------- environmental impact----------------- --> */
+section>.impact{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    padding-top: 10px;
+    padding-bottom:60px;
+}
+section>.impact h1{
+    text-align: center;
+}
+section>.impact h1{
+    font-size:40px;
+    color:#0B4619;
+}
+section>.impact>div{
+    padding: 0px 200px;
+}
+section>.impact p{
+    font-size:25px;
+    line-height: 30px;
+    text-align: center;
+}
+@media only screen and (min-width:200px) and (max-width:600px){
+    section>.impact{
+        padding-top: 0px;
+    }
+    section>.impact h1{
+        font-size:23px;
+        line-height: 28px;
+    }
+    section>.impact>div{
+        padding: 0px 20px;
+    }
+    section>.impact p{
+        font-size:18px;
+        padding-bottom: 15px;
+        line-height:20px;
+        text-align:justify;
+    }
+       
+}
+@media only screen and (min-width:600px) and (max-width:1200px){
+    section>.impact{
+        padding-top: 0px;
+    }
+    section>.impact h1{
+        font-size:23px;
+        line-height: 28px;
+    }
+    section>.impact>div{
+        padding: 0px 50px;
+    }
+    section>.impact p{
+        font-size:18px;
+        padding-bottom: 15px;
+        line-height:20px;
+        text-align:justify;
+    }
+       
+}
+/*---------------------------------------- specialMission--------------------------------- */
+section>.special{
+    padding:0px 0;
+    padding-bottom: 100px;
+    position: relative;
+}
+section>.special>.mission{
+    width:100%;
+    height:550px;
+}
+section>.special>.mission img{
+    height:100%;
+    width:100%;
+    position: relative;
+    z-index: -100;
+}
+/* skew-letter */
+section>.special>.skew-letter{
+    display: flex;
+    position: absolute;
+    top:76%;
+    transition: all 0.5s;
+    width:100%;
+    overflow: hidden;
+    height:125px;
+}
+section>.special>.skew-letter>.txt{
+    width:50%;
+}
+section>.special>.skew-letter:hover>.txt{
+    width:70%;
+}
+section>.special>.skew-letter>.txt>p{
+    font-size:55px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    background-color: #116530;
+    color: white;
+    padding:30px;
+    width:fit-content;
+    padding-top: 40px;
+    position: relative;
+    transition: all 0.8s;
+    width:100%;
+}
+section>.special>.skew-letter:hover .txt>p{
+    background-color: white;
+    color:#116530;
+}
+section>.special>.skew-letter:hover{
+    top:82.2%;
+}
+section>.special>.skew-letter:hover .txt>p{
+    transform:translateX(90px);
+}
+section>.special>.skew-letter:hover .txt>p::after{
+    background-color: white;
+}
+section>.special>.skew-letter>.txt>p::after{
+    position: absolute;
+    width:100%;
+    transition: all 0.5s;
+    height:100%;
+    top:0;
+    right:0;
+    content: "";
+    z-index: -1;
+    left:25px;
+    transform: skewX(-20deg);
+    background-color: #116530;
+}
+/* extra-skew */
+section>.special>.skew-letter>.extra{
+    display: flex;
+}
+section>.special>.skew-letter>.extra>p{
+    height:125px;
+    position: relative;
+    z-index: 100;
+    transform: skewX(-20deg);
+}
+section>.special>.skew-letter>.extra>p:first-child{
+    background-color:white;
+    width:70px;
+}
+section>.special>.skew-letter>.extra>p:last-child{
+    background-color: #116530;    
+    width:50px;
+}
+section>.special>.skew-letter:hover .extra>p:first-child{
+    background-color:white;
+}
+@media only screen and (min-width:300px) and (max-width:1150px){
+    section>.special{
+        padding-bottom: 120px;
+    }
+    /* skew-letter */
+    section>.special>.skew-letter:hover{
+        top:none;
+    }
+    section>.special>.skew-letter{
+        top:82.1%;
+    }
+    section>.special>.skew-letter:hover>.txt{
+        width:50%;
+    }
+    section>.special>.skew-letter>.txt>p{
+        font-size:20px;
+        padding:25px;
+        padding-top: 30px;
+    }
+    section>.special>.skew-letter>.txt{
+        width:calc(100% - 40%);
+    }
+    section>.special>.skew-letter:hover .txt>p{
+        padding-right:0px;
+    }
+    section>.special>.skew-letter:hover .txt>p{
+        transform:none;
+    }
+    /* extra-skew    */
+    section>.special>.skew-letter>.extra>p{
+        height:75px;
+    }
+    section>.special>.skew-letter>.extra>p:first-child{
+        background-color:white;
+        width:60px;
+    }
+    section>.special>.skew-letter>.extra>p:last-child{
+        background-color: #116530;    
+        width:40px;
+    }
+}
+@media only screen and (min-width:300px) and (max-width:600px){
+    section>.special>.skew-letter>.txt>p{
+        font-size:12px;
+    }
+    /* extra-skew    */
+    section>.special>.skew-letter>.extra>p{
+        height:67px;
+    }   
+}
+@media only screen and (min-width:300px) and (max-width:950px){
+    section>.special>.mission{
+        height:400px;
+    }
+    section>.special{
+        padding-bottom:84.5px;
+    }
+}
+/*---------------------------------------------------- headlines------------------------------------- */
+section>.headline{
+    padding:0 50px 50px 50px;
+}
+section>.headline>.title{
+    display: flex;
+    position:relative;
+}
+section>.headline>.title>p:nth-child(2){
+    background-color: #116530;
+    width:200px;
+    height:3px;
+    margin-left: 150px;
+    bottom: 0;
+    position: absolute;
+}
+section>.headline>.title>p:nth-child(3){
+    background-color: #116530;
+    width:50px;
+    height:7px;
+    bottom: 0;
+    transform: skewX(-20deg);
+    position: absolute;
+    left:350px;
+}
+/* picture */
+section>.headline>.headline-content{
+   padding: 50x;
+}
+section>.headline>.headline-content>.image{
+    height:350px;
+    position: relative;
+    margin-top: 70px;
+}
+section>.headline>.headline-content>.image img{
+    width:100%;
+    height:100%;
+    padding-right: 30px;
+    padding-top:30px;
+    left:30px;
+    bottom:30px;
+    filter: brightness(70%);
+    transition: all 0.6s;
+    position: absolute;
+}
+section>.headline>.headline-content>.image img:hover{
+    left:-21px;
+    bottom:-9px;
+    filter: brightness(100%);
+    transform: scale(0.9);
+}
+
+section>.headline>.headline-content>.image div{
+    width:80%;
+    height:250px;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    background-color: #0B4619;
+}
+/*------------------ headline-content--------------- */
+section>.headline>.headline-content{
+    display: grid;
+    column-gap: 30px;
+    row-gap: 30px;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+}
+section>.headline>.headline-content>.airshow{
+    padding-top:80px;
+}
+/* skew */
+section>.headline>.headline-content>.airshow .skew .txt{
+    display: flex;
+    gap:10px;
+}
+/* civil-letter */
+section>.headline>.headline-content>.airshow .skew .txt h1{
+    background-color: #0B4619;
+    width:fit-content;
+    padding: 10px 20px;
+    padding-right:40px;
+    color:white;
+    padding-top: 15px;
+    position: relative;
+    transition: all 0.5s;
+}
+section>.headline>.headline-content>.airshow .skew .txt:hover h1{
+    background-color: white;
+    color: #0B4619;
+    padding-left: 50px;
+    transform: translateX(50px);
+}
+section>.headline>.headline-content>.airshow .skew .txt:hover h1::after{
+    background-color: white;
+}
+section>.headline>.headline-content>.airshow .skew .txt h1::after{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: #0B4619;
+    top:0;
+    left:20px;
+    transform: skewX(-20deg);
+    z-index: -1;
+    transition: all 0.5s;
+}
+/* extra */
+section>.headline>.headline-content>.airshow .skew .txt p{
+    padding: 10px 0px;
+    transform: skewX(-20deg);
+}
+section>.headline>.headline-content>.airshow .skew .txt p:nth-child(2){
+    background-color: rgba(10, 69, 24,.8);
+    width:30px;
+    margin-left:20px;
+}
+section>.headline>.headline-content>.airshow .skew .txt p:nth-child(3){
+    background-color: rgba(10, 69, 24,.6);
+    width:20px;
+}
+section>.headline>.headline-content>.airshow .skew .txt p:nth-child(4){
+    background-color: rgba(10, 69, 24,.4);
+    width:10px;
+}
+/* text-content */
+/* timeLine */
+section>.headline>.headline-content>.airshow .air-txt p:first-child{
+    padding: 20px 0;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+section>.headline>.headline-content>.airshow .air-txt h1{
+    font-size: 38px;
+    line-height: 40px;
+    padding-bottom: 10px;
+}
+section>.headline>.headline-content>.airshow .air-txt p:nth-child(3){
+    font-size: 19px;
+    line-height: 21px;
+    padding-bottom: 20px;
+}
+/* caret */
+section>.headline>.headline-content>.airshow .air-txt .arrow a{
+    text-decoration: none;
+    color: #0B4619;
+    font-weight: bold;
+}
+section>.headline>.headline-content>.airshow .air-txt .arrow a:hover{
+    text-decoration:underline 2px;
+}
+/* icon */
+section>.headline>.headline-content>.airshow .air-txt .arrow>div{
+    width:25px;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+section>.headline>.headline-content>.airshow .air-txt .arrow{
+    display: flex;
+    gap:10px;
+    align-items: center;
+}
+section>.headline>.headline-content>.airshow .air-txt .arrow i{
+    color: #0B4619;
+    display: block;
+    font-size:18px;
+    position:relative;
+    transition: all 0.5s;
+    bottom: 2px;
+    left: 30px;
+
+}
+section>.headline>.headline-content>.airshow .air-txt .arrow:hover .fa-caret-right{
+    transform: translateX(-30px);
+}
+@media only screen and (min-width:300px) and (max-width:500px){
+    section>.headline{
+        margin-top: 20px;
+        padding:0 15px 30px 15px;
+    }
+    section>.headline>.headline-content{
+        grid-template-columns: repeat(auto-fit,minmax(290px,1fr));
+    }
+    section>.headline>.headline-content>.image img:hover{
+        transform: scale(0.9);
+    }
+    section>.headline>.title>p:nth-child(2){
+        display: none;
+    }
+    section>.headline>.title>p:nth-child(3){
+        display: none;
+    }
+    section>.headline>.headline-content>.image{
+        height:350px;
+        margin-top:30px;
+    }
+    section>.headline>.headline-content>.image img{
+        padding-right: 10px;
+        padding-top:10px;
+        left:10px;
+        bottom:10px;
+        filter: brightness(70%);
+        transition: all 0.5s;
+        position: absolute;
+    }   
+}
+/*----------------------------------------------------- matrix 3x3 --------------------------*/
+section>.matrix{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    column-gap: 40px;
+    row-gap: 40px;
+    padding:20px 50px 50px 50px;
+}
+section>.matrix>div{
+    position: relative;
+}
+/* image */
+section>.matrix>div>.image{
+    height:263px;
+    width: 100%;
+    transition: all 0.5s;
+}
+section>.matrix>div>.image img{
+    z-index: -10;
+    height:100%;
+    width:100%;
+    transition: all 0.5s;
+    position: relative;
+}
+section>.matrix>#new>.image img{
+    object-fit: contain;
+}
+section>.matrix>div:hover .image{
+    background-color: rgba(17, 100, 48,.5);
+}
+/* text */
+section>.matrix>div>.title{
+    padding: 10px;
+}
+section>.matrix>div>.title h3{
+    line-height:23px;
+}
+section>.matrix>div>.title p{
+    padding-bottom:10px;
+}
+/* civil-letter */
+section>.matrix>div .txt{
+    background-color: #0B4619;
+    color: white;
+    position: absolute;
+    transition: all 0.5s;
+    z-index: 10;
+}
+section>.matrix>div .txt:hover{
+    background-color: white;
+    color: #0B4619;
+    transform: translateX(100px);
+}
+section>.matrix>div .txt:hover h1::after{
+    background-color: white;
+    padding-left: 50px;
+}
+section>.matrix>div .txt>h1{
+    width: fit-content;
+    padding:8px;
+    padding-top: 12px;
+    padding-right:50px;
+    position: relative;
+}
+section>.matrix>div .txt>h1::after{
+    transform: skewX(-20deg);
+    position: absolute;
+    width: 100%;
+    transition: all 0.5s;
+    height: 100%;
+    background-color: #0B4619;
+    content: "";
+    top:0;
+    left:20px;
+    z-index:-1;
+}
+/* chevron */
+section>.matrix>div>i{
+    position: absolute;
+    top:35%;
+    left:45%;
+    font-size: 25px;
+    color: white;
+    transform: rotate(-30deg);
+    display: none;
+}
+section>.matrix>div:hover i{
+    display: grid;
+}
+@media only screen and (min-width:300px) and (max-width:520px){
+    section>.matrix{
+        grid-template-columns: repeat(auto-fit,minmax(290px,1fr));
+        row-gap: 30px;
+        padding:20px 15px 30px 15px;
+    }
+}
+/* --------------------------readMore-----------------common To AlL */
+section>.read-more{
+    margin-bottom: 50px;
+}
+section>.read-more>.chevron{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    padding-right:50px;
+}
+section>.read-more>.chevron>div{
+    width:fit-content;
+}
+section>.read-more>.chevron>div>div:first-child{
+    width:300px;
+    padding: 10px;
+    position: absolute;
+}
+/* flow */
+section>.read-more>.chevron>div>div:last-child{
+    background-color:rgb(11, 71, 25);
+    width:231px;
+    height: 38px;
+    position: relative;
+    z-index: -1;
+    top:10px;
+    transition: all 3s;
+}
+section>.read-more>.chevron>div:hover #flow{
+    width:0px;  
+    background-color:#0B4619;
+}
+section>.read-more>.chevron>div{
+    position: relative;
+}
+/* icon */
+section>.read-more>.chevron>div>div{
+    display: flex;
+    gap:10px;
+    align-items: center;
+    width: fit-content;
+}
+section>.read-more>.chevron>div>div>div{
+    background-color: #116530;
+    padding: 10px 15px;
+    transform: skewX(-20deg);
+}
+section>.read-more>.chevron>div>div>div>i{
+    color: white;
+    transform: skewX(20deg);
+}
+/* anchor */
+section>.read-more>.chevron>div>div a{
+    font-weight:bold;
+    color:white;
+    text-decoration: none;
+}
+section>.read-more>.chevron>div:hover div a{
+    color:#116530;
+}
+section>.read-more>.chevron>div>div a:hover{
+    text-decoration:none;
+}
+@media only screen and (min-width:300px) and (max-width:1300px){
+    /* .icon     */
+    section>.read-more>.chevron>div>div>div{
+        transform:none;
+    }
+    section>.read-more>.chevron>div>div>div>i{
+        transform:none;
+    }    
+}
+/* -----------------------------------------------falcon-family ------------------------------*/
+section>.falcon{
+    padding: 50px 50px;
+    padding-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    row-gap: 30px;
+    column-gap: 30px;
+}
+section>.falcon>div{
+    width: 100%;
+    transition: all 0.5s;
+    border-bottom: 5px solid transparent;
+}
+section>.falcon>div:hover{
+    transform: scale(1.05);
+}
+/* image */
+section>.falcon>div>.image{
+    height: 270px;
+    width: 100%;
+}
+section>.falcon>div>.image img{
+    filter: brightness(70%);
+    transition: all 0.5s;
+    height:100%;
+    width:100%;
+}
+section>.falcon>div:hover .image img{
+    filter: brightness(100%);
+}
+/* text */
+section>.falcon>div:hover .txt{
+    color:#0B4619;
+}
+section>.falcon>div:hover .txt h1{
+    transform:translateX(30px);
+}
+section>.falcon>div>.txt{
+    padding: 20px 10px;
+}
+section>.falcon>div>.txt h1{
+    transition: all 0.5s;
+}
+@media only screen and (min-width:200px) and (max-width:520px){
+    section>.falcon{
+        padding: 30px 15px;
+        padding-bottom:30px;
+        grid-template-columns: repeat(auto-fit,minmax(290px,1fr));
+        row-gap: 30px;
+        column-gap: 30px;
+    }
+}
+/*---------------------------------------------------------to discover----------- */
+section>.support{
+    padding:0 50px 50px 50px;
+}
+section>.support>div{
+    display: grid;
+    column-gap: 70px;
+    row-gap:30px;
+    padding-bottom: 30px;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+}
+/* image */
+section>.support>div .image{
+    width:100%;
+    height:434px;
+}
+section>.support>div .image img{
+    width:100%;
+    height:100%;
+    transition: all 0.5s;
+    filter: brightness(70%);
+}
+section>.support>div .image  img:hover{
+    filter: brightness(100%);
+    transform: scale(1.1);
+}
+/* text */
+section>.support>div .text{
+    padding: 50px 50px 0 30px;
+    text-align: right;
+    width:100%;
+    position:relative;
+}
+section>.support>div .text>h1{
+    font-size: 35px;
+    font-weight: bold;
+    padding-bottom:20px;
+}
+section>.support>div .text>p{
+    text-transform: uppercase;
+    line-height:33px;
+    font-size: 23px;
+    padding-bottom:20px;
+}
+section>.support>div .text>div a{
+    color:#4F6F52;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+section>.support>div .text>div a:hover{
+    text-decoration:underline 2px #4F6F52;
+}
+section>.support>div .text>div i{
+    color: #4F6F52;
+}
+@media only screen and (min-width:300px) and (max-width:520px){
+    section>.support{
+        padding:0 15px 30px 15px;
+    }
+    section>.support>div{
+        display: grid;
+        column-gap: 70px;
+        row-gap:20px;
+        padding-bottom: 30px;
+        grid-template-columns: repeat(auto-fit,minmax(290px,1fr));
+    }
+    section>.support>div .image  img:hover{
+        transform: scale(1.0);
+    }
+    /* text */
+section>.support>div .text{
+    padding: 30px 0px 0 0px;
+    text-align:center;
+}
+section>.support>div .text>h1{
+    font-size:20px;
+}
+section>.support>div .text>p{
+    text-transform:capitalize;
+    line-height:18px;
+    font-size:17px;
+    padding-bottom:20px;
+}   
+}
+
+/* -------------------------------------------------------fOOter------------------------------------------- */
+/*------------------------------------------------------- box1 */
+footer>.box1{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    padding: 50px;
+    row-gap: 30px;
+    column-gap: 30px;
+    background-color: #116530;
+
+}
+/* newsletter SubscriptioN --------------------------------------------*/
+footer>.box1>.mail{
+    width:100%;
+}
+/* heading */
+footer>.box1>.mail>.title>h2{
+    color: white;
+    display: inline-block;
+    padding-bottom: 20px;
+}
+footer>.box1>.mail>.title>i{
+    font-size: 22px;
+    color:white;
+    padding-left: 10px;
+}
+/* -------Form */
+footer>.box1>.mail>form{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    background-color: white;
+    padding:40px;
+}
+footer>.box1>.mail>form>button{
+    color:white;
+    width: fit-content;
+    padding:20px 40px;
+    border: none;
+    background-color: #116530;
+    font-size: 20px;
+}
+footer>.box1>.mail>form>button i{
+    padding-left: 10px;
+}
+
+/* ------------eMail */
+footer>.box1>.mail>form>.email{
+    background-color: white;
+    position: relative;
+}
+footer>.box1>.mail>form>.email input{
+    padding:15px 20px;
+    width:100%;
+    font-size: 20px;
+    outline: none;
+}
+footer>.box1>.mail>form>.email label{
+    position: absolute;
+    left:20px;
+    bottom:42px;
+    background-color:white;
+    padding: 0px 5px;
+}
+/* ---------------radioButtoN */
+footer>.box1 form>.radio{
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px;
+}
+footer>.box1 form>.radio p{
+    padding-bottom: 5px;
+    width: 100%;
+}
+footer>.box1 form>.radio label{
+    color: #116530;
+    font-weight: bold;
+    padding-right:15px;
+}
+footer>.box1 form>.radio input{
+    margin-right: 10px ;
+}
+footer>.box1 form>.radio input[type="radio"]{
+    transform: scale(1.3);    /* -------------------------------------To show radio button bigger */
+}
+/* --------------checkbox */
+footer>.box1 form>.checkbox{
+    display: flex;
+    align-items:flex-start;
+    gap:15px;
+}
+footer>.box1 form>.checkbox>input[type="checkbox"]{
+    transform: scale(1.4);
+}
+footer>.box1 form>.checkbox>p{
+    line-height: 22px;
+    text-align: justify;
+}
+footer>.box1 form>.checkbox a{
+    text-decoration: none;
+}
+footer>.box1 form>.checkbox a:hover{
+    text-decoration:underline 2px;
+}
+/* ----------------privacy */
+footer>.box1 form>.policy{
+    padding:0 0 20px 50px;
+}
+footer>.box1 form>.policy a{
+    text-decoration: none;
+}
+footer>.box1 form>.policy a:hover{
+    text-decoration:underline 2px;
+}
+/* stay ConnecteD --------------------------------------------*/
+footer>.box1>.stay{
+    width:100%;
+}
+footer>.box1>.stay>h1{
+    padding-bottom:20px;
+    color: white;
+}
+footer>.box1>.stay>div{
+    border: 10px solid #8EAC50;
+    background-color: #116530;
+    overflow: hidden;
+    position: relative;
+    height:91.5%;
+}
+/* icons */
+footer>.box1>.stay .icon{
+    margin-top:calc(100% - 65%);
+    padding:50px 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:15px;
+}
+footer>.box1>.stay .icon>i{
+    color:white;
+    background-color: #8EAC50;
+    display: inline-block;
+    height:50px;
+    width:50px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+/* skew */
+footer>.box1>.stay>div>p{
+    background-color: #8EAC50;
+    width:130px;
+    transform: skewX(-30deg);
+}
+footer>.box1>.stay>div>p{
+    left:-10px;
+    position: absolute;
+}
+footer>.box1>.stay>div>h1{
+    background-color: #8EAC50;
+    width:130px;
+    transform: skewX(-30deg);
+    font-size: 16px;
+    position: absolute;
+    bottom:0;
+    right:-10px;
+}
+/*------------------------------------------------------- box2 */
+footer>.box2{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    background-color: #0B2447;
+    padding:100px;
+    row-gap: 30px;
+    column-gap: 30px;
+}
+footer>.box2>div>div{
+    display: flex;
+    gap:15px;
+    flex-direction: column;
+}
+footer>.box2 a{
+    color:white;
+    display: block;
+    text-decoration: none;
+    transition: all 0.5s 2s;
+}
+footer>.box2 a:hover{
+    text-decoration: underline 2px;
+}
+footer>.box2 i{
+    color:white;
+}
+footer>.box2>div>div>div{
+    display: flex;
+    gap:10px;
+}
+footer>.box2 h2{
+    color:white;
+    padding-bottom:30px;
+}
+/*------------------------------------------------------- box3 */
+footer>.box3>div{
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+}
+footer>.box3>div>p{
+    padding-bottom: 15px;
+}
+footer>.box3>div>div{
+    display: flex;
+    gap: 20px;
+}
+footer>.box3>div>div a{
+    color:#0B2447;
+    transition: all 2s 1s;
+    text-decoration: none;
+}
+footer>.box3>div>div a:hover{
+    text-decoration:underline 2px;
+}
+footer>.box3{
+    position: relative;
+}
+footer>.box3>a{
+    position: absolute;
+    background-color: rgba(23, 73, 99,.8);
+    color: white;
+    text-decoration: none;
+    padding:10px 20px;
+    bottom:0;
+}
+footer>.box3>a:hover{
+    text-decoration: underline 2px;
+    background-color: rgba(23, 73, 99,1);
+}
+@media only screen and (min-width:300px) and (max-width:590px){
+/* -------------------------------------------------------fOOter------------------------------------------- */
+    /*------------------------------------------------------- box1 */
+    footer>.box1{
+        display:grid;
+        grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+        padding: 10px;
+    }
+        /* newsletter SubscriptioN --------------------------------------------*/
+    footer>.box1>.mail{
+        width:100%;
+    }
+    /* heading */
+    footer>.box1>.mail>.title>h2{
+        font-size:18px;
+        padding:10px 0;
+    }
+    footer>.box1>.mail>.title>i{
+        padding-bottom: 10px;
+    }
+    /* -------Form */
+    footer>.box1>.mail>form{
+        padding:10px;
+    }
+    /* ---------------radioButtoN */
+    footer>.box1 form>.radio{
+        display: flex;
+        flex-direction: column;
+        gap:15px;
+    }
+    /* ----------------privacy */
+    footer>.box1 form>.policy{
+        padding:0 0 20px 0px;
+        text-align: justify;
+        line-height: 20px;
+    }
+    /* stay ConnecteD --------------------------------------------*/
+    footer>.box1>.stay{
+        width:100%;
+    }
+    footer>.box1>.stay>div{
+        height:none;
+    }
+    /*------------------------------------------------------- box2 */
+    footer>.box2{
+        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+        padding:30px;
+        row-gap: 30px;
+    }
+    /*------------------------------------------------------- box3 */
+    footer>.box3>div{
+        display: flex;
+        flex-direction: column;
+    }
+    footer>.box3>div>div{
+        flex-direction: column;
+    }            
+}
+@media only screen and (min-width:300px) and (max-width:1275px){
+
+                                        /*------------group intro-------- */
+    section>.group .intro{
+        margin-top:50px;
+        position: relative;
+    }
+}
+@media only screen and (min-width:300px) and (max-width:829px){
+    /* ------------------footer------------------- */
+    /*---- stay connected--- */
+    /* icons */
+    footer>.box1>.stay .icon{
+        margin-top:0;
+        padding-left:10px;
+        padding-right:10px;
+    }
+    footer>.box1>.stay{
+        height: fit-content;
+    }
+}

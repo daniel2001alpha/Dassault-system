@@ -1,0 +1,1563 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+/*------------------------------- navigationBar---------------------- */
+nav{
+    display:flex;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 11;
+    background-color: white;
+    width:100%;
+    padding:0px 30px;
+    justify-content: space-between;
+}
+/* companyLogo */
+nav>img[alt="Dassault System"]{
+    height:70px;
+    margin: 10px 0px;
+    object-fit:cover;
+}
+/* submenu */
+nav>.submenu{
+    display: flex;
+    gap:30px;
+    align-items: center;
+}
+nav>.submenu .menu>a{
+    font-size: 25px;
+    text-transform:capitalize;
+    text-decoration:none;
+    color: black;
+}
+nav>.submenu>div{
+    height:90px;
+    padding-top:35px ;
+}
+nav>.submenu>div{
+    border-bottom: 3px solid transparent;
+}
+    /* barIcon */
+nav>label .fa-bars{
+    display: none;
+}
+/* ------------------------------------------submenu dropdown----------------------------------- */
+nav .submenu>.menu:first-child{
+    border-bottom:3px solid #164863;
+} 
+nav .submenu>.menu:nth-child(2){
+    border-bottom:3px solid white;
+    transition: all 1s;
+}
+nav .submenu>.menu:nth-child(3){
+    border-bottom:3px solid white;
+    transition: all 1s;
+}
+nav .submenu>.menu:nth-child(4){
+    border-bottom:3px solid white;
+    transition: all 1s;
+}
+nav .submenu>.menu:nth-child(5){
+    border-bottom:3px solid white;
+    transition: all 1s;
+}
+/* hover */
+nav .submenu>.menu:nth-child(2):hover{
+    border-bottom:3px solid #4F6F52;
+} 
+nav .submenu>.menu:nth-child(3):hover{
+    border-bottom:3px solid #116530;
+} 
+nav .submenu>.menu:nth-child(4):hover{
+    border-bottom:3px solid #CD5C08;
+} 
+nav .submenu>.menu:last-child:hover{
+    border-bottom:3px solid #D80032;
+} 
+nav .submenu .menu .dropdown{
+    position:absolute;
+    top:92px;
+    left:50px;
+    width:calc(100% - 100px);
+    padding:40px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    column-gap: 20px;
+    visibility: hidden;
+    transition: all 0.1s;
+    background-color: white;
+    z-index:10;
+    transition: all 0.1s;
+}
+nav .submenu .menu:hover .dropdown{
+    visibility: visible;
+}
+/* dropdown headings h3*/
+nav .submenu .menu .dropdown div h3{
+    text-transform: capitalize;
+    padding-bottom:20px;
+    line-height: 25px;
+    text-decoration:none;
+}
+nav .submenu .menu .dropdown div h3>a{
+    text-decoration: none;
+}
+nav .submenu .menu .dropdown div h3>a:hover{
+   text-decoration: underline 2px;
+}
+/* webtv that convert into inline */
+nav .submenu .menu .dropdown>div div h3{
+    display: inline-block;
+}
+/* anchor that convert into block */
+nav .submenu .menu .dropdown div a{
+    display:block;
+    color: black;
+}
+/* anchor that convert into block */
+nav .submenu .menu .dropdown div .anchor{
+    display:inline-block;
+}
+nav .submenu .menu .dropdown div .pad-top{
+    padding-top:20px;
+}
+nav .submenu .menu .dropdown div>a{
+    padding-bottom:7px;
+    line-height: 20px;
+    text-decoration: none;
+}
+nav .submenu .menu .dropdown div>a:hover{
+    text-decoration: underline;
+}
+/* navIcons */
+nav>.navicons{
+    font-size: 25px;
+    display: flex;
+    gap:40px;
+    align-items: center;
+    border-bottom: 3px solid transparent;
+}
+nav>.navicons i{
+    height: 90px;
+    padding-top: 35px;
+    border-bottom: 3px solid transparent;
+    transition: all 1s;
+}
+nav>.navicons .icon>i:hover{
+    border-bottom: 3px solid #164863;
+}
+/* -----------camera,wrench,magnifier dropdown ------------*/
+nav>.navicons .icon>.dropdown{
+    position:absolute;
+    top:92px;
+    left:67%;
+    padding:20px;
+    display: none;
+    z-index:10;
+    background-color: white;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+nav>.navicons .icon>.dropdown>div{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:10px;
+    height:50px;
+}
+nav>.navicons .icon>.dropdown>div span{
+    text-transform:capitalize;
+    font-size:18px;
+    text-decoration: underline transparent;
+}
+nav>.navicons .icon>.dropdown>div span:hover{
+    text-decoration: underline;
+}
+nav>.navicons .icon:hover .dropdown{
+    display:block;
+}
+/* wrench */
+nav>.navicons .wrench>.dropdown{
+    left:65%;
+    width:400px;
+    padding:20px 30px;
+}
+/* magnifier */
+nav>.navicons .magnifier>.dropdown{
+    position: absolute;
+    top:92px;
+    left:10%;
+    width:calc(100% - 20%);
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    display:flex;
+    align-items: center;
+    background-color: white;
+    z-index:10;
+    padding:10px 0px;
+    justify-content: space-evenly;
+    align-items: center;
+    display: none;
+}
+nav>.navicons .magnifier #mag:checked~.dropdown{
+    display:flex;
+}
+nav>.navicons .magnifier .dropdown input{
+    display: block;
+    width:calc(100% - 30%);
+    height:50px;
+    outline:none;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+/* label_input */
+nav>label,nav input{
+    display:none;
+}
+/* barIcon */
+nav>label i{
+    font-size:30px;
+    background-color: coral;
+}
+/* selectLanguage */
+select{
+    font-size: 20px;
+    outline: none;
+    border: none;
+    transition: all 1s;
+    border-bottom: 3px solid transparent;
+}
+select:hover{
+    border-bottom: 3px solid #164863;
+}
+/* mediaQurey */
+@media only screen and (min-width:200px) and (max-width:1275px){
+    nav>.submenu{
+        position:absolute;
+        top:50px;
+        right:-100%;
+        justify-content: center;
+        flex-direction: column;
+        gap:10px;
+        width:calc(100% - 30%);
+        width:470px;
+        align-items: center;
+        padding: 20px 0;
+        background-color:white;
+        transition: all 0.5s;
+        z-index:10;
+    }
+    nav>#lbl:checked~.submenu{
+        display: flex;
+        right:0;
+    }
+    nav>.submenu .menu>a{
+       height: fit-content;
+    }
+    nav>.navicons .fa-camera,nav>.navicons .fa-wrench{
+        display: none;
+    }
+    nav>.navicons label>.fa-magnifying-glass{
+        position: absolute;
+        top:0;
+        padding-top:15px ;
+        right:65px;
+    }
+    nav>.navicons i{
+        height: 0px;
+        padding-top: 20px;
+    }
+    select{
+        display: none;
+    }
+    nav{
+        height:50px;
+        padding-left:10px;
+    }
+    /* label */
+    nav>label{
+        display:block;
+    }
+    /* barIcon */
+    nav>label .fa-bars{
+        display: grid;
+        position: absolute;
+        right:0;
+        top:0;
+        color:white;
+        padding:10px;
+    }
+    /* companyLogo */
+    nav>img[alt="Dassault System"]{
+        height:40px;
+        margin:5px 0px;
+    }
+    /* showing nav dropdown when hover */
+    nav .submenu .menu .dropdown>div>a,nav .submenu .menu .dropdown>div .anchor,nav .submenu .menu .dropdown>div .fa-arrow-up-right-from-square {
+        display: none;
+    }
+    nav .submenu .menu .dropdown>div>h3:hover~a,nav .submenu .menu .dropdown>div>h3:hover~div .anchor,nav .submenu .menu .dropdown>div .fa-arrow-up-right-from-square:hover .fa-arrow-up-right-from-square {
+        display: grid;
+    }
+    /* dropdown headings h3*/
+    nav .submenu .menu .dropdown div h3{
+       padding-bottom:10px;
+    }
+    /* magnifier */
+    nav>.navicons .magnifier .dropdown i{
+        height:10px;
+        padding:0;
+        padding-bottom: 20px;
+    }
+    nav>.navicons .magnifier>.dropdown{
+        top:50px;
+    }
+    /* magnifier */
+    nav>.navicons .magnifier>.dropdown{
+        left:0%;
+        width:calc(100% - 0%);
+        padding:10px 0px;
+    }
+    
+}
+@media only screen and (min-width:200px) and (max-width:475px){
+    nav>.submenu{
+        width:100%;
+        padding:30px;
+    }
+    nav>.submenu>div{
+        height:fit-content;
+        padding-top:0px;
+    }
+    nav .submenu .menu .dropdown{
+        padding:40px;
+        top:calc(100% - 0%);
+        left:0;
+        width:100%;
+    }
+    /* magnifier dropdown search letter */
+    nav>.navicons .magnifier .dropdown label{
+       display: none;
+    }
+    nav>.navicons .magnifier .dropdown input{
+        border:1px solid  #427D9D ;
+    }
+    nav>.navicons label>.fa-magnifying-glass{
+        padding-top:15px;
+        right:60px;
+    }
+
+}
+/* anchor */
+nav .submenu .menu .group div h3>a{
+    color:#164863;
+}
+nav .submenu .menu .defense div h3>a{
+    color:#4F6F52;
+}
+nav .submenu .menu .civil div h3>a{
+    color:#116530;
+}
+nav .submenu .menu .space div h3>a{
+    color:#CD5C08;
+}
+nav .submenu .menu .passion div h3>a{
+    color:#D80032;
+}
+/*---------------------------------- bodyContent---------------------------- */
+/*------------ group-------- */
+section>.group{
+    overflow: hidden;
+}
+                                    /*------------ intro-------- */
+section>.group .intro{
+    height:550px;
+    margin-top:90px;
+    position: relative;
+}
+/* image */
+section>.group .intro>img{
+ width:100%;
+ height:100%;
+}
+/* copyright */
+section>.group .intro>p{
+    background-color:rgba(22, 73, 100,.3);
+    color: white;
+    padding:10px;
+    position: absolute;
+    width:70%;
+    top:93%;
+}
+/* --------------skew------------ */
+section>.group .intro .skew{
+    display: flex;
+    align-items: flex-end;
+    gap:20px;
+    position: absolute;
+    top:83.5%;
+    right:3%;
+}
+/* arrow skew */
+section>.group .intro .skew .skew1{
+    width:fit-content;
+   padding:15px 25px;
+   background-color:#164863;
+   transform: skew(-30deg);
+}
+section>.group .intro .skew .skew1>a{
+   color:white;
+   display: block; /*-------------------- skew only work in block level element */
+   text-decoration:none;
+   font-size: 20px;
+}
+/* group letter skew */
+section>.group .intro .skew .skew2{
+    background-color:white;
+    padding: 20px 300px 20px 20px;
+    transform: skew(-30deg);
+    border-left: 10px solid #164863;
+}
+section>.group .intro .skew .skew2>h1{
+    font-size: 50px;
+    padding-left:20px;
+    transform: skew(30deg);
+}
+/* skew */
+@media only screen and (min-width:300px) and (max-width:1000px){
+    /* mediaQurey for group intro */
+    section>.group .intro{
+        margin-bottom: 100px;
+    }
+    section>.group .intro .skew{
+        flex-direction:column;
+        right:0;
+        align-items:none;
+        width:100%;
+        gap:0;
+        top:81%;
+    }
+    section>.group .intro .skew .skew1{
+        transform: skew(0deg);
+    }
+    /* group letter */
+    section>.group .intro .skew .skew2>h1{
+        padding-left:40px;
+    }    
+    section>.group .intro .skew .skew2{
+        width:95%;
+        position: relative;
+        left:-85px;
+        padding-left:30px;
+        background-color: #427D9D;
+        color: white;
+    }
+    section>.group .intro>p{
+        width:100%;
+    }
+}
+@media only screen and (min-width:300px) and (max-width:590px){
+    /* copyright */
+    section>.group .intro>p{
+        background-color: rgba(71, 61, 138,0.7);
+        color: white;
+        padding:10px;
+        position: absolute;
+        width:100%;
+        top:90%;
+    }
+    /* group intro */
+    section>.group .intro{
+        margin-bottom: 100px;
+    }
+    section>.group .intro .skew{
+        flex-direction:column;
+        right:0;
+        align-items:none;
+        width:100%;
+        gap:0;
+        top:70.5%;
+    }
+    /* group letter skew */
+    section>.group .intro .skew .skew2{
+        padding: 20px 200px 20px 20px;
+    }
+    section>.group .intro .skew .skew2>h1{
+        font-size: 30px;
+    }
+    section>.group .intro .skew .skew2{
+        width:95%;
+        position: relative;
+        left:-58px;
+        padding-left:30px;
+        background-color: #427D9D;
+        color: white;
+    }
+
+}
+                                    /* ------------headlines----------- */
+section .headlines{
+    padding:50px;
+}
+/* title */
+section .headlines .title{
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 50px;
+}
+section .headlines .title p:nth-child(2){
+    background-color: grey;
+    color:transparent;
+    width:200px;
+    font-size:3px;
+    margin-left:30px;
+}
+section .headlines .title p:nth-child(3){
+    background-color: grey;
+    color:transparent;
+    width:50px;
+    font-size:10px;
+    transform: skew(-30deg);
+}
+/* ----------------content------------------- */
+section .headlines .content{
+    padding-bottom: 50px;
+    display: grid;
+    column-gap: 50px;
+    row-gap: 50px;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+}
+/* image */
+section .headlines .content .img{
+    height:400px;
+    position:relative;
+}
+/* box behind that image */
+section .headlines .content .img p{
+    width:calc(100% - 10%);
+    height:300px;
+    background-color: #164863;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+}
+section .headlines .content .img img{
+   z-index: 10;
+    position: absolute;
+    width:calc(100% - 5%);
+    height:92%;
+    left:5%;
+    bottom:8%;
+}
+/* --------------------textContent */
+section .headlines .content .airshow{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    padding-top: 20px;
+}
+/* group_title  */
+section .headlines .content .airshow>h3{
+    background-color:#164863 ;
+    width:fit-content;
+    color:white;
+    padding:5px 10px;
+    padding-top:10px;
+    padding-right:100px;
+    transform: skewX(-5deg);
+    border-right: 10px solid silver;
+}
+section .headlines .content .airshow>h1{
+    font-size: 40px;
+    line-height: 40px;
+}
+section .headlines .content .airshow:hover h1{
+    text-decoration: underline;
+}
+/* timeline */
+section .headlines .content .airshow>p:nth-child(2){
+    color:grey;
+    letter-spacing:3px;
+}
+/* paragraph */
+section .headlines .content .airshow>p:nth-child(4){
+    font-size:20px;
+    line-height:24px;
+}
+/* read the press kit */
+section .headlines .content .airshow>.read a{
+    text-decoration: none;
+    color:#164863;
+    font-weight: bold;
+}
+section .headlines .content .airshow:hover .read>a{
+    text-decoration: underline 2px;
+}
+/*------------------------- matrix-content 3 * 3------------------ */
+section .headlines .matrix-content{
+    display: grid;
+    row-gap: 30px;
+    column-gap: 30px;
+    margin-bottom: 50px;
+    grid-template-columns: repeat(auto-fit,minmax(295px,1fr));
+}
+section .headlines .matrix-content>.box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+/* image */
+section .headlines .matrix-content>.box>img{
+    width:100%;
+    height:270px;
+}
+section .headlines .matrix-content>.box4>img{
+    object-fit: contain;
+}
+/* title */
+section .headlines .matrix-content>.box>.group-title{
+    position: absolute;
+    bottom:86.5%;
+    background-color: #164863;
+    padding:10px;
+    padding-right: 100px;
+    padding-top:15px;
+    width: fit-content;
+    color:white;
+    border-right: 10px solid rgba(191, 191, 191,.3);
+}
+/* subTitle */
+section .headlines .matrix-content>.box>h1{
+    font-size: 20px;
+}
+/*------------------- read more news_kit---------------- */
+section .readmore{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width:calc(100vw - 100px);
+    gap:15px;
+    overflow: hidden;/* -------------------------- by we gave overflow hidden we acquire onside skew */
+}
+section .readmore>.read a{
+    font-weight: bold;
+    padding-right:10px;
+    color:black;
+    line-height: 25px;
+    text-decoration: none;
+}
+section .readmore>.read a:hover{
+    text-decoration:underline 2px;
+}
+/* arrowIcon */
+section .readmore>.read>div span{
+    padding:10px 20px;
+    color:white;
+    font-size: 20px;
+    display: inline-block;/* --------------------------skew will work only when make that block element  */
+    transform:skew(30deg);
+}
+/* section .headlines .matrix-content>.readmore>.read div */
+section .readmore>.read div{
+    display: inline-block;
+    transform:skew(-30deg);
+    background-color: #164863;
+}
+/* extraBox */
+section .readmore>p{
+    padding: 10px;
+    padding-right:200px;
+    transform:skewX(-30deg);
+    transform-origin: bottom right; /*-------------------------- changing orgin point to remove unnecessory spaces---*/
+    background-color: #164863;
+    color:transparent;
+}
+@media only screen and (min-width:300px) and (max-width:1130px){
+    section .readmore{
+        width:100%; 
+        display: flex;
+        gap:15px;
+        flex-direction: column;
+        align-items: flex-end;       
+    }
+    section .readmore>.read{
+        display: flex;
+        gap:15px;
+        align-items: center;
+    }
+    /* extraBox */
+    section .readmore>p{
+        display: none;
+    }   
+    section .readmore>.read div{
+        transform:none;
+    }
+    /* arrowIcon */
+    section .readmore>.read>div span{
+        transform:none;
+    }    
+}
+
+/*------------------------------------------ aboutUs------------------------- */
+section .about>.about-intro{
+    width:100%;
+    height:670px;
+    position:relative;
+}
+/* image */
+section .about>.about-intro>img{
+    width:100%;
+    height:90%;
+}
+/* about us title */
+section .about>.about-intro>div{
+    width:calc(90% - 300px);
+    padding:20px 0px;
+    padding-left:150px;
+    padding-top:40px;
+    transform: skewX(-30deg);
+    background-color:#164863;
+    position: absolute;
+    left:-100px;
+    bottom:15px;
+    overflow: hidden;
+    border-right: 20px solid #427D9D;
+}
+section .about>.about-intro>div h1{
+    font-size:50px;
+    color:white;
+    transform: skewX(30deg);
+}
+@media only screen and (min-width:300px) and (max-width:890px){
+    section .about>.about-intro{
+        height:400px;
+        padding-bottom:57px;
+    }
+    /* image */
+    section .about>.about-intro>img{
+        height:90%;
+    }
+    /* about us title */
+    section .about>.about-intro>div{
+        bottom:0;
+        width: 100%;
+        padding:15px 0px;
+        left:-50px;
+        padding-top:25px;
+        padding-left:80px;
+    }    
+}
+/*-- about us title */
+@media only screen and (min-width:200px) and (max-width:420px){
+    section .about>.about-intro{
+        height:350px;
+        padding-bottom:39px;
+    }
+    /* image */
+    section .about>.about-intro>img{
+        height:90%;
+    }
+    section .about>.about-intro>div h1{
+        font-size: 30px;
+    }
+    /* about us title */
+    section .about>.about-intro>div{
+        bottom:0;
+        width: 100%;
+        padding:15px 0px;
+        left:-30px;
+        padding-top:25px;
+        padding-left:80px;
+    }    
+}
+/* about_pages */
+section .about>.pages{
+    display: grid;
+    row-gap: 30px;
+    column-gap: 30px;
+    padding:50px;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fit,minmax(290px,1fr));
+}
+section .about>.pages .box{
+    border-bottom: 4px solid #164863;
+}
+section .about>.pages .box img{
+    width:100%;
+    height:280px;
+}
+section .about>.pages .box>h1{
+    padding:30px 10px;
+}
+section .about .readmore{
+    margin-right:50px;
+    margin-bottom: 50px;
+}
+
+/*--------------------------------------------- careers news --------------------------*/
+section .career-news{
+    padding: 50px;
+    display: grid;
+    column-gap: 30px;
+    row-gap: 30px;
+    grid-template-columns: repeat(auto-fit,minmax(420px,1fr));
+}
+/*----------- our professions -----*/
+/* title */
+section .career-news>.pro>h1{
+    padding-bottom:15px;
+    font-size: 30px;
+    line-height: 35px;
+}
+section .career-news>.pro>div{
+    background-color: white;
+    padding:30px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
+/* subHeading */
+section .career-news>.pro>div h3{
+    font-size: 23px;
+    padding-bottom:30px;
+}
+/* paragraph */
+section .career-news>.pro>div p{
+    font-size: 21px;
+    line-height:27px;
+}
+/* link */
+section .career-news>.pro>div>div{
+    padding-top:50px;
+}
+section .career-news>.pro>div>div article:first-child{
+ padding-bottom:20px;   
+}
+section .career-news>.pro>div>div article a{
+    text-decoration: none;
+    font-weight: bold;
+    color:#164863;
+    padding-right:15px;
+}
+section .career-news>.pro>div>div article span{
+    font-weight: bold;
+}
+/* -------latestOppertunities-------- */
+section .career-news>.new{
+    margin-bottom:50px;
+}
+section .career-news>.new>div>div:nth-child(2){
+    margin: 30px 0px;
+}
+section .career-news>.new>div>div{
+    padding:30px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    border-bottom:2px solid  #164863;
+    position:relative;
+    z-index: -2;
+}
+section .career-news>.new>h1{
+    font-size:30px;
+    line-height: 35px;
+    padding-bottom: 20px;
+}
+section .career-news>.new>div>div p:nth-child(2){
+    padding:10px 0px;
+}
+/* apply button */
+section .career-news>.new>div>div>div{
+    background-color:#164863;
+    width:fit-content;
+    padding:15px 40px;
+    position: absolute;
+    right:0;
+}
+section .career-news>.new>div>div>div a::before{
+    position: absolute;
+    top:0;
+    left:-15px;
+    content: " ";
+    width:100%;
+    height:100%;
+    z-index:-1;
+    background-color:#164863;
+    transform: skewX(-20deg);
+}
+section .career-news>.new>div>div>div a{
+    color:white;
+    font-weight: bold;   
+    text-decoration: none;
+}
+section .career-news>.new>div>div>div a:hover{
+    text-decoration: underline;
+}
+section .career-news>.new>div>div>div span{
+    color:white;
+    padding-left:10px;
+    font-weight: bold;   
+}
+section .career-news>.readmore{
+    margin:0px;
+    display: flex;
+    align-items: space-between;
+}
+/*------------------------------------------ finance ---------------------------*/
+section .finance>div:nth-child(2){
+    padding:50px;
+    display: grid;
+    row-gap: 30px;
+    column-gap: 30px;
+    grid-template-columns: repeat(auto-fit,minmax(420px,1fr));
+}
+/* ------facts and figures------ */
+section .finance .fact{
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    padding:50px;
+    border-bottom: 5px solid #164863;
+    overflow: hidden;
+}
+section .finance .fact>h1{
+    font-size: 40px;
+    padding-bottom: 50px;
+}
+/* amount */
+section .finance .fact>h1+span{
+    font-size: 100px;
+    color: #164863;
+    font-weight: bold;
+}
+section .finance>.fact>h2{
+    font-size: 35px;
+    padding-bottom: 20px;
+}
+/* year */
+section .finance .fact>p{
+    padding-bottom:20px;
+}
+/* arrow */
+section .finance .fact>h2~span{
+    font-size: 20px;
+    font-weight: bold;
+    padding:10px 15px;
+    color:white;
+    background-color: #164863;
+}
+section .finance .fact>span:nth-child(6){
+    margin-left: 5px;
+}
+/* bottom of fact page */
+section .finance .fact>div{
+    margin-top: 50px;
+    width: fit-content;
+    padding: 10px;
+    background-color: #164863;
+    position:relative;
+}
+
+section .finance .fact>div span:first-child{
+    color: white;
+    line-height: 23px;
+}
+section .finance .fact>div span:first-child::before{
+    position: absolute;
+    top:0;
+    right:20px;
+    width:100%;
+    height:100%;
+    content: " ";
+    z-index: -1;
+    background-color: #164863;
+    transform: skewX(30deg);
+}
+section .finance .fact>div i{
+    color:white;
+    padding-left: 10px;
+    font-size: 20px;
+}
+/* ----------------------AnnualReport------------- */
+section .finance .annual{
+    padding:50px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    border-bottom: 5px solid #164863;
+}
+section .finance .annual>div{
+    display:flex;
+    align-items: center;
+    gap:30px;
+}
+
+section .finance .annual>h1{
+    font-size: 40px;
+    padding-bottom: 30px;
+}
+section .finance .annual>div>div>h3{
+    font-size: 22px;
+}
+section .finance .annual>div>div>p{
+    padding:10px 0 15px 0;
+}
+/* icon */
+section .finance .annual>div>div>div i{
+    border-right: 2px solid #164863;
+    padding-right: 10px;    
+}
+/* ----------------Latest_publications-------------- */
+section .finance .publication{
+    padding:50px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    border-bottom: 5px solid #164863;
+}
+section .finance .publication>div>div{
+    margin: 30px 0;;
+}
+section .finance .publication>div>div>div{
+    display: flex;
+    gap:40px;
+    align-items: center;
+    justify-content: space-between;
+}
+section .finance .publication>div>div>div>h1{
+    line-height: 30px;
+}
+/* downloadIcon */
+section .finance .publication>div>div>div>i{
+    font-size: 22px;
+    color:#164863;
+    padding:10px;
+    border: 2px solid #164863;
+}
+section .finance .publication>div>div>span{
+    padding-bottom: 15px;
+}
+
+/*----- skew for financial calender && latest publications*/
+section .finance .skew{
+    background-color: #164863;
+    padding:10px 20px;
+    width: fit-content;
+    position: relative;
+    overflow: hidden;
+}
+section .finance .skew a{
+    text-decoration: none;
+    color:white;
+    padding-right:10px;
+}
+section .finance .skew a::before{
+    position: absolute;
+    width:100%;
+    content: " ";
+    height: 100%;
+    top:0;
+    left:4%;
+    z-index: -1;
+    transform: skewX(-30deg);
+    background-color: #164863;
+}
+
+section .finance .skew i{
+    font-size:20px;
+    color: white;
+}
+/* -----------financial calendar------- */
+section .finance .calendar{
+    padding:50px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    border-bottom: 5px solid #164863;
+}
+section .finance .calendar>div>div{
+    padding:20px 0px;
+}
+section .finance .calendar>div>div h1{
+    line-height: 27px;
+}
+section .finance .calendar>div>div p{
+    padding-bottom: 5px;
+}
+section .finance .calendar .skew{
+    margin-top: 50px;
+}
+/* readmore */
+section .finance>div:nth-child(3){
+    margin-right:50px;
+}
+/* -----------------------------------------------press---------------------------------- */
+section .about-press{
+    padding:50px 0px;
+}
+/* ---------pressKit--------- */
+section .press-kit{
+    padding:50px 10px;
+}
+section .press-kit>h1{
+    font-size: 40px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+}
+/* table */
+section .press-kit>table{
+    width:100%;
+    border-right: 2px solid transparent;
+    border-left: 2px solid transparent;
+}
+section .press-kit>table,th,td{
+    border:2px solid rgba(23, 73, 99,0.4);
+    border-collapse: collapse;
+}
+section .press-kit>table td{
+    text-align: right;
+    border-left: 2px solid transparent;
+    border-right: 0px solid transparent;
+}
+section .press-kit>table th{
+    border-left: 0px solid transparent;
+    border-right: 2px solid transparent;
+    text-align: left;
+    font-size: 22px;
+    padding-left:60px;
+    line-height:25px;
+}
+section .press-kit>table td,th{
+    padding:30px;
+}
+/* readmore */
+section .about-press .readmore{
+    margin:0px;
+}
+/* -------------------------------------------------------fOOter------------------------------------------- */
+/*------------------------------------------------------- box1 */
+footer>.box1{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    padding: 50px;
+    row-gap: 30px;
+    column-gap: 30px;
+    background-color: #164863;
+
+}
+/* newsletter SubscriptioN --------------------------------------------*/
+footer>.box1>.mail{
+    width:100%;
+}
+/* heading */
+footer>.box1>.mail>.title>h2{
+    color: white;
+    display: inline-block;
+    padding-bottom: 20px;
+}
+footer>.box1>.mail>.title>i{
+    font-size: 22px;
+    color:white;
+    padding-left: 10px;
+}
+/* -------Form */
+footer>.box1>.mail>form{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    background-color: white;
+    padding:40px;
+}
+footer>.box1>.mail>form>button{
+    color:white;
+    width: fit-content;
+    padding:20px 40px;
+    border: none;
+    background-color: #164863;
+    font-size: 20px;
+}
+footer>.box1>.mail>form>button i{
+    padding-left: 10px;
+}
+
+/* ------------eMail */
+footer>.box1>.mail>form>.email{
+    background-color: white;
+    position: relative;
+}
+footer>.box1>.mail>form>.email input{
+    padding:15px 20px;
+    width:100%;
+    font-size: 20px;
+    outline: none;
+}
+footer>.box1>.mail>form>.email label{
+    position: absolute;
+    left:20px;
+    bottom:42px;
+    background-color:white;
+    padding: 0px 5px;
+}
+/* ---------------radioButtoN */
+footer>.box1 form>.radio{
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px;
+}
+footer>.box1 form>.radio p{
+    padding-bottom: 5px;
+    width: 100%;
+}
+footer>.box1 form>.radio label{
+    color: #164863;
+    font-weight: bold;
+    padding-right:15px;
+}
+footer>.box1 form>.radio input{
+    margin-right: 10px ;
+}
+footer>.box1 form>.radio input[type="radio"]{
+    transform: scale(1.3);    /* -------------------------------------To show radio button bigger */
+}
+/* --------------checkbox */
+footer>.box1 form>.checkbox{
+    display: flex;
+    align-items:flex-start;
+    gap:15px;
+}
+footer>.box1 form>.checkbox>input[type="checkbox"]{
+    transform: scale(1.4);
+}
+footer>.box1 form>.checkbox>p{
+    line-height: 22px;
+    text-align: justify;
+}
+footer>.box1 form>.checkbox a{
+    text-decoration: none;
+}
+footer>.box1 form>.checkbox a:hover{
+    text-decoration:underline 2px;
+}
+/* ----------------privacy */
+footer>.box1 form>.policy{
+    padding:0 0 20px 50px;
+}
+footer>.box1 form>.policy a{
+    text-decoration: none;
+}
+footer>.box1 form>.policy a:hover{
+    text-decoration:underline 2px;
+}
+/* stay ConnecteD --------------------------------------------*/
+footer>.box1>.stay{
+    width:100%;
+}
+footer>.box1>.stay>h1{
+    padding-bottom:20px;
+    color: white;
+}
+footer>.box1>.stay>div{
+    border: 10px solid #427D9D;
+    background-color: #164863;
+    overflow: hidden;
+    position: relative;
+    height:91.5%;
+}
+/* icons */
+footer>.box1>.stay .icon{
+    margin-top:calc(100% - 65%);
+    padding:50px 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:15px;
+}
+footer>.box1>.stay .icon>i{
+    color:white;
+    background-color: #427D9D;
+    display: inline-block;
+    height:50px;
+    width:50px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+/* skew */
+footer>.box1>.stay>div>p{
+    background-color: #427D9D;
+    width:130px;
+    transform: skewX(-30deg);
+}
+footer>.box1>.stay>div>p{
+    left:-10px;
+    position: absolute;
+}
+footer>.box1>.stay>div>h1{
+    background-color: #427D9D;
+    width:130px;
+    transform: skewX(-30deg);
+    font-size: 16px;
+    position: absolute;
+    bottom:0;
+    right:-10px;
+}
+/*------------------------------------------------------- box2 */
+footer>.box2{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    background-color: #0B2447;
+    padding:100px;
+    row-gap: 30px;
+    column-gap: 30px;
+}
+footer>.box2>div>div{
+    display: flex;
+    gap:15px;
+    flex-direction: column;
+}
+footer>.box2 a{
+    color:white;
+    display: block;
+    text-decoration: none;
+    transition: all 0.5s 2s;
+}
+footer>.box2 a:hover{
+    text-decoration: underline 2px;
+}
+footer>.box2 i{
+    color:white;
+}
+footer>.box2>div>div>div{
+    display: flex;
+    gap:10px;
+}
+footer>.box2 h2{
+    color:white;
+    padding-bottom:30px;
+}
+/*------------------------------------------------------- box3 */
+footer>.box3>div{
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+}
+footer>.box3>div>p{
+    padding-bottom: 15px;
+}
+footer>.box3>div>div{
+    display: flex;
+    gap: 20px;
+}
+footer>.box3>div>div a{
+    color:#0B2447;
+    transition: all 2s 1s;
+    text-decoration: none;
+}
+footer>.box3>div>div a:hover{
+    text-decoration:underline 2px;
+}
+footer>.box3{
+    position: relative;
+}
+footer>.box3>a{
+    position: absolute;
+    background-color: rgba(23, 73, 99,.8);
+    color: white;
+    text-decoration: none;
+    padding:10px 20px;
+    bottom:0;
+}
+footer>.box3>a:hover{
+    text-decoration: underline 2px;
+    background-color: rgba(23, 73, 99,1);
+}
+@media only screen and (min-width:300px) and (max-width:590px){
+                                        /*------------ intro-------- */
+    section>.group .intro{
+        height:350px;
+        margin-top:60px;
+        position: relative;
+    }
+/* -------------------------------headlines */
+    section .headlines{
+        padding:20px;
+    }
+    /* title */
+    section .headlines .title{
+        padding-bottom: 0px;
+    }
+    /*------- content */
+    section .headlines .content{
+        padding-bottom: 50px;
+        grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    }
+    /* image */
+    section .headlines .content .img{
+        height:350px;
+    }
+    /* box behind that image */
+    section .headlines .content .img p{
+        height:270px;
+        width:90%;
+    }
+    section .headlines .content .img img{
+        width:calc(100% - 5%);
+        height:80%;
+        left:6%;
+        bottom:6%;
+    }
+    /*------------------------- text Content */
+    /* paragraph */
+    section .headlines .content .airshow>p:nth-child(4){
+        text-align:left;
+    }
+    /* -----matrix-content 3 * 3----- */
+    section .headlines .matrix-content{
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    }
+/* --about us--- */
+    /*----------------- about_pages */
+    section .about>.pages{
+        padding:20px;
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    }
+/* ----------------career-news */
+    section .career-news{
+        padding:20px;
+        grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    }
+    /*----------- our professions -----*/
+    section .career-news>.pro>div{
+        padding:0px;
+        box-shadow: none;
+    }
+/* ----finance */
+    section .finance>div:nth-child(2){
+        padding:20px;
+        grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    }
+    /* ------facts and figures------ */
+    section .finance .fact{
+        padding:10px;
+        box-shadow: none;
+    }
+    section .finance .fact>h1{
+        font-size:25px;
+    }
+    /* bottom of the page */
+    section .finance .fact>div span:first-child::before{
+        right:40px;
+    }
+    /* ----------------------AnnualReport------------- */
+    section .finance .annual{
+        padding:30px;
+    }
+    section .finance .annual>div{
+        flex-direction: column;
+        gap:30px;
+    }
+    section .finance .annual>h1{
+        font-size:25px;
+    }
+    /* ----------------Latest_publications-------------- */
+    section .finance .publication{
+        padding:0px 0 20px 0;
+        box-shadow: none;
+    }
+    /* -----------financial calendar------- */
+    section .finance .calendar{
+        padding:0px 0 20px 0;
+        box-shadow: none;
+    }
+/* -----------------------------------------------press---------------------------------- */
+    /* ---------pressKit--------- */
+    section .press-kit>h1{
+        font-size:30px;
+        padding-bottom: 20px;
+        padding-left: 0px;
+    }
+    /* table */
+    section .press-kit>table th{
+        padding:10px;
+        padding-left: 15px;
+        font-size: 20px;
+        font-weight: 100;
+    }
+    section .press-kit>table td,th{
+        padding:0px;
+    }
+/* -------------------------------------------------------fOOter------------------------------------------- */
+    /*------------------------------------------------------- box1 */
+    footer>.box1{
+        display:grid;
+        grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+        padding:20px;
+    }
+        /* newsletter SubscriptioN --------------------------------------------*/
+    footer>.box1>.mail{
+        width:100%;
+    }
+    /* heading */
+    footer>.box1>.mail>.title>h2{
+        font-size:18px;
+        padding:10px 0;
+    }
+    footer>.box1>.mail>.title>i{
+        padding-bottom: 10px;
+    }
+    /* -------Form */
+    footer>.box1>.mail>form{
+        padding:10px;
+    }
+    /* ---------------radioButtoN */
+    footer>.box1 form>.radio{
+        display: flex;
+        flex-direction: column;
+        gap:15px;
+    }
+    /* ----------------privacy */
+    footer>.box1 form>.policy{
+        padding:0 0 20px 0px;
+        text-align: justify;
+        line-height: 20px;
+    }
+    /* stay ConnecteD --------------------------------------------*/
+    footer>.box1>.stay{
+        width:100%;
+    }
+    footer>.box1>.stay>div{
+        height:none;
+    }
+    /*------------------------------------------------------- box2 */
+    footer>.box2{
+        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+        padding:30px;
+        row-gap: 30px;
+    }
+    /*------------------------------------------------------- box3 */
+    footer>.box3>div{
+        display: flex;
+        flex-direction: column;
+    }
+    footer>.box3>div>div{
+        flex-direction: column;
+    }            
+}
+@media only screen and (min-width:300px) and (max-width:1275px){
+
+                                        /*------------group intro-------- */
+    section>.group .intro{
+        margin-top:50px;
+        position: relative;
+    }
+}
+@media only screen and (min-width:300px) and (max-width:829px){
+    /* ------------------footer------------------- */
+    /*---- stay connected--- */
+    /* icons */
+    footer>.box1>.stay .icon{
+        margin-top:0;
+        padding-left:10px;
+        padding-right:10px;
+    }
+    footer>.box1>.stay{
+        height: fit-content;
+    }
+}
